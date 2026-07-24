@@ -13,15 +13,12 @@ public:
     bool isPalindrome(ListNode* head) {
         if (!head || !head->next) return true;
 
-        // Step 1: Find the middle using Fast & Slow pointers
         ListNode* slow = head;
         ListNode* fast = head;
         while (fast != nullptr && fast->next != nullptr) {
             slow = slow->next;
             fast = fast->next->next;
         }
-
-        // Step 2: Reverse the second half of the linked list starting from 'slow'
         ListNode* prev = nullptr;
         ListNode* curr = slow;
         while (curr != nullptr) {
@@ -30,12 +27,9 @@ public:
             prev = curr;
             curr = nextNode;
         }
-        // 'prev' is now the head of the reversed second half
-
-        // Step 3: Compare the first half and the reversed second half
         ListNode* p1 = head;
         ListNode* p2 = prev;
-        while (p2 != nullptr) { // Compare until end of second half
+        while (p2 != nullptr) {
             if (p1->val != p2->val) {
                 return false;
             }
