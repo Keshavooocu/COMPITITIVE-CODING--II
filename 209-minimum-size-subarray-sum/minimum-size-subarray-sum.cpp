@@ -15,7 +15,6 @@ public:
                 ++left;
             }
         }
-
         return len== INT_MAX ? 0 : len;
     }
 };
