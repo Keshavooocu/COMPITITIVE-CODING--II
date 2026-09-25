@@ -18,8 +18,8 @@ public:
         }
 
         int part_count = mfreq - 1;
-        int part_length = n + 1;
-        int min_slots = part_count * part_length + mmax;
+        int part_len = n + 1;
+        int min_slots = part_count * part_len + mmax;
 
         return max((int)tasks.size(), min_slots);
     }
