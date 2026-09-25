@@ -13,17 +13,17 @@ public:
 
         vector<string> ans(n);
 
-        for (int rank = 1; rank <= n; ++rank) {
-            int original_index = sorted_scores[rank - 1].second;
+        for (int r = 1; r <= n; ++r) {
+            int i = sorted_scores[r - 1].second;
 
-            if(rank ==1) {
-                ans[original_index] = "Gold Medal";
-            } else if(rank ==2) {
-                ans[original_index] = "Silver Medal";
-            } else if(rank ==3) {
-                ans[original_index] = "Bronze Medal";
+            if(r ==1) {
+                ans[i] = "Gold Medal";
+            } else if(r ==2) {
+                ans[i] = "Silver Medal";
+            } else if(r ==3) {
+                ans[i] = "Bronze Medal";
             } else{
-                ans[original_index] = to_string(rank);  }
+                ans[i] = to_string(r);  }
         }
         return ans;
     }
