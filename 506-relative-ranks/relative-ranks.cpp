@@ -11,20 +11,20 @@ public:
 
         sort(sorted_scores.rbegin(), sorted_scores.rend());
 
-        vector<string> answer(n);
+        vector<string> ans(n);
 
         for (int rank = 1; rank <= n; ++rank) {
             int original_index = sorted_scores[rank - 1].second;
 
             if(rank ==1) {
-                answer[original_index] = "Gold Medal";
+                ans[original_index] = "Gold Medal";
             } else if(rank ==2) {
-                answer[original_index] = "Silver Medal";
+                ans[original_index] = "Silver Medal";
             } else if(rank ==3) {
-                answer[original_index] = "Bronze Medal";
+                ans[original_index] = "Bronze Medal";
             } else{
-                answer[original_index] = to_string(rank);  }
+                ans[original_index] = to_string(rank);  }
         }
-        return answer;
+        return ans;
     }
 };
